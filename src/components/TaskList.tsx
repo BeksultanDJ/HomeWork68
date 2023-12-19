@@ -3,11 +3,16 @@
     interface TaskListProps {
         tasks: { id: number; title: string; completed: boolean }[];
         onToggleTask: (taskId: number) => void;
+        onDeleteTask: (taskId: number) => void;
     }
 
-    const TaskList: React.FC<TaskListProps> = ({ tasks, onToggleTask }) => {
+    const TaskList: React.FC<TaskListProps> = ({ tasks, onToggleTask , onDeleteTask}) => {
         const handleToggle = (taskId: number) => {
             onToggleTask(taskId);
+        };
+
+        const handleDelete = (taskId: number) => {
+            onDeleteTask(taskId)
         };
 
         return (
@@ -21,6 +26,7 @@
                                 onChange={() => handleToggle(task.id)}
                             />
                             {task.title}
+                            <button onClick={() => handleDelete(task.id)}>Delete</button>
                         </li>
                     ))}
                 </ul>

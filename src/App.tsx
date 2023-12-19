@@ -35,11 +35,15 @@ const App: React.FC = () => {
         });
     };
 
+    const handleDeleteTask = (taskId: number) => {
+        setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId));
+    };
+
     return (
         <div>
             <h1>TODO App</h1>
             <TaskForm onAddTask={handleAddTask} />
-            <TaskList tasks={tasks} onToggleTask={toggleTaskCompletion} />
+            <TaskList tasks={tasks} onToggleTask={toggleTaskCompletion} onDeleteTask={handleDeleteTask} />
         </div>
     );
 };
