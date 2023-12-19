@@ -40,7 +40,7 @@ const App: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className="AppContainer">
             <h1>TODO App</h1>
             <TaskForm onAddTask={handleAddTask} />
             <TaskList tasks={tasks} onToggleTask={toggleTaskCompletion} onDeleteTask={handleDeleteTask} />

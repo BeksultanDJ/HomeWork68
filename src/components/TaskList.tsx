@@ -26,7 +26,7 @@
                                 onChange={() => handleToggle(task.id)}
                             />
                             {task.title}
-                            <button onClick={() => handleDelete(task.id)}>Delete</button>
+                            <button className="delBtn" onClick={() => handleDelete(task.id)}>Delete</button>
                         </li>
                     ))}
                 </ul>

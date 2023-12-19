@@ -19,7 +19,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form className="createForm" onSubmit={handleSubmit}>
                 <input
                     type="text"
                     placeholder="Enter task title"
