@@ -7,6 +7,7 @@
     }
 
     const TaskList: React.FC<TaskListProps> = ({ tasks, onToggleTask , onDeleteTask}) => {
+
         const handleToggle = (taskId: number) => {
             onToggleTask(taskId);
         };
