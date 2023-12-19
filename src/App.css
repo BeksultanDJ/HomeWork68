@@ -40,12 +40,32 @@
   color: #888;
 }
 
+.AppContainer {
+  width: 500px;
+}
+
+.AppContainer h1 {
+  text-align: center;
+}
+
+.createForm {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 0 20px 0;
+}
+
 .tasks {
   list-style: none;
   border: 1px solid black;
-  margin: 5px 0;
+  margin: 10px 0;
   padding: 10px;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.delBtn {
+  margin-left: auto;
 }
 
 ul {
@@ -55,6 +75,6 @@ ul {
 .task-body {
   border: 1px solid black;
   margin: 5px 0;
-  padding: 10px;
+  padding: 20px;
   border-radius: 8px;
 }
