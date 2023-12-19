@@ -10,7 +10,10 @@ interface Task {
 }
 
 const App: React.FC = () => {
-    const [tasks, setTasks] = useState<Task[]>([]);
+    const [tasks, setTasks] = useState<{ id: number; title: string; completed: boolean }[]>([
+        { id: 1, title: 'Task 1', completed: false },
+        { id: 2, title: 'Task 2', completed: true },
+    ]);
 
     const handleAddTask = (newTask: string) => {
         const newTaskItem: Task = {
@@ -21,11 +24,22 @@ const App: React.FC = () => {
         setTasks([...tasks, newTaskItem]);
     };
 
+    const toggleTaskCompletion = (taskId: number) => {
+        setTasks(prevTasks => {
+            return prevTasks.map(task => {
+                if (task.id === taskId) {
+                    return { ...task, completed: !task.completed };
+                }
+                return task;
+            });
+        });
+    };
+
     return (
         <div>
             <h1>TODO App</h1>
             <TaskForm onAddTask={handleAddTask} />
-            <TaskList tasks={tasks} />
+            <TaskList tasks={tasks} onToggleTask={toggleTaskCompletion} />
         </div>
     );
 };
